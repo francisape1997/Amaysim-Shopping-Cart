@@ -62,6 +62,7 @@ describe('Test all scenarios', () => {
 
         const clonedUltSmall = { ...ultSmall };
         const clonedUltMedium = { ...ultMedium };
+        const clonedOneGBDataPack = { ...oneGBDataPack };
 
         cart.add(clonedUltSmall);
 
@@ -75,12 +76,12 @@ describe('Test all scenarios', () => {
                 clonedUltSmall, clonedUltMedium, clonedUltMedium,
 
                 {
-                    ...oneGBDataPack,
+                    ...clonedOneGBDataPack,
                     price: 0,
                 },
 
                 {
-                    ...oneGBDataPack,
+                    ...clonedOneGBDataPack,
                     price: 0,
                 }
             ]
