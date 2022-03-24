@@ -45,8 +45,6 @@ export default class ShoppingCart {
         const foundPromoCode = promoCodes.find(item => item.name === promoCode);
 
         if (!foundPromoCode) {
-            console.error('Invalid promo code');
-
             return false;
         }
 
