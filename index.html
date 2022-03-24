@@ -1,0 +1,60 @@
+
+<script type="module">
+    import pricingRules from './src/pricing-rules.js';
+    import ShoppingCart from './src/shopping-cart.js';
+    import products from './src/products.js';
+
+    const PROMO_CODE = 'I<3AMAYSIM';
+
+    const ultSmall = products.find(item => item.productCode === 'ult_small');
+    const ultMedium = products.find(item => item.productCode === 'ult_medium');
+    const ultLarge = products.find(item => item.productCode === 'ult_large');
+    const oneGBDataPack = products.find(item => item.productCode === '1gb');
+
+    // Scenario 1
+    const cart = new ShoppingCart(pricingRules);
+
+    cart.add(ultSmall);
+    cart.add(ultSmall);
+    cart.add(ultSmall);
+
+    cart.add(ultLarge);
+
+    console.log('SCENARIO 1 -> Items:', cart.items, `Total: ${cart.total}`);
+    // END: Scenario 1
+
+    // Scenario 2
+    const cart2 = new ShoppingCart(pricingRules);
+
+    cart2.add(ultSmall);
+    cart2.add(ultSmall);
+
+    cart2.add(ultLarge);
+    cart2.add(ultLarge);
+    cart2.add(ultLarge);
+    cart2.add(ultLarge);
+
+    console.log('SCENARIO 2 -> Items:', cart2.items, `Total: ${cart2.total}`);
+    // END: Scenario 2
+
+    // Scenario 3
+    const cart3 = new ShoppingCart(pricingRules);
+
+    cart3.add(ultSmall);
+
+    cart3.add(ultMedium);
+    cart3.add(ultMedium);
+
+    console.log('SCENARIO 3 -> Items:', cart3.items, `Total: ${cart3.total}`);
+    // END: Scenario 3
+
+    // Scenario 4
+    const cart4 = new ShoppingCart(pricingRules);
+
+    cart4.add(ultSmall, PROMO_CODE);
+    cart4.add(oneGBDataPack);
+
+    console.log('SCENARIO 4 -> Items:', cart4.items, `Total: ${cart4.total}`);
+    // END: Scenario 4
+    
+</script>
